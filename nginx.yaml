@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata: nginx-deployment
+   labels:
+     app: inginx
+spec:
+ replicas: 2
+ selector:
+   matchLabels:
+      app:inginx
+ template:
+     metadata:
+     labels:
+     app: inginx
+ spec:
+  containers:
+  - name: nginx
+    image: inginx: 1.16
+    ports:
+    - containerPort: 80
